@@ -1,59 +1,101 @@
-# Eye Care Patient Journey & Adoption Analytics
+# Eye Care Patient Journey Analytics
 
-## Overview
-This project analyzes the **patient journey in eye care** to understand how patients adopt and continue using vision care products after clinical recommendations.
+End-to-end analytics project analyzing the **patient journey in eye care** — from clinical recommendation to purchase, retention, and downstream revenue.
 
-The focus is on:
-- product adoption after recommendation
-- retention and dropout behavior
-- differences across markets, channels, and product tiers
-- translating analytical insights into **business-ready recommendations**
+The project is built on a **fully synthetic, privacy-safe dataset** and demonstrates how data analytics can quantify recommendation impact and support business decisions in healthcare-like environments.
 
-The project is inspired by real-world challenges in global eye care and health-tech analytics.
+---
 
 ## Project Goals
-- Understand patient population and visit behavior
-- Measure adoption rates after product recommendation
-- Analyze retention using cohort-based approaches
-- Identify key drivers of dropout and sustained usage
-- Provide actionable insights for improving patient outcomes and access
+
+- Measure adoption uplift from clinical recommendations  
+- Quantify short-term revenue impact (60-day window)  
+- Analyze retention behavior using cohort analysis  
+- Identify high-performing segments by market, tier, and channel  
+- Translate analytics into clear business actions  
+
+---
 
 ## Dataset
-The project uses a **synthetic dataset** generated in Python to simulate realistic eye care scenarios while avoiding sensitive personal or medical data.
 
-Generated tables include:
-- patients
-- visits
-- recommendations
-- transactions
-- outcomes
+- Fully **synthetic and reproducible**
+- Healthcare-style relational schema
+- ~50k patients
+- No sensitive or proprietary data
 
-All data is reproducible via a data generation script.
+**Core tables**
+- `patients`
+- `visits`
+- `recommendations`
+- `transactions`
+- `outcomes`
 
-## Repository Structure
-- data/ synthetic raw and processed data
-- notebooks/ analytical notebooks (step-by-step narrative)
-- src/ reusable Python modules (data generation, metrics, cohorts)
-- reports/ executive summary and business recommendations
+All raw data is generated via notebook **01_generate_data.ipynb**.
 
+---
 
-## Analysis Workflow
-1. Data generation and validation
-2. Patient landscape and visit behavior analysis
-3. Adoption funnel: recommendation → first purchase
-4. Retention and cohort analysis
-5. Business interpretation and recommendations
+## Analysis Structure
 
-## How to Run
-1. Create a virtual environment and install dependencies:
-```bash
-python -m pip install -r requirements.txt
+| Notebook | Purpose |
+|--------|--------|
+| `01_generate_data.ipynb` | Synthetic data generation (reproducible) |
+| `02_data_understanding.ipynb` | Data validation & exploration |
+| `03_funnel_adoption.ipynb` | Recommendation → adoption funnel |
+| `04_retention_cohorts.ipynb` | Cohort-based retention analysis |
+| `05_recommendations.ipynb` | Uplift & business impact analysis |
 
-2. Generate synthetic data:
-python -m src.data_gen
+---
 
-3. Run notebooks in order:
-- 02_data_understanding.ipynb
-- 03_funnel_adoption.ipynb
-- 04_retention_cohorts.ipynb
-- 05_recommendations.ipynb
+## Key Findings
+
+- Clinical recommendations are **strongly associated with higher adoption** within 30 days  
+- Recommended patients generate **higher 60-day revenue**  
+- Adoption uplift varies by **market type and product tier**  
+- Retention analysis shows **longer engagement among adopters**  
+- Channel uplift could not be reliably estimated due to control-group limitations (documented)
+
+---
+
+## Business Impact
+
+- Demonstrates measurable value of recommendations beyond conversion
+- Highlights where segmentation improves effectiveness
+- Shows how analytics can guide:
+  - targeting strategy
+  - product tier alignment
+  - retention optimization
+
+---
+
+## Tools & Skills
+
+- Python (pandas, numpy, matplotlib)
+- Cohort & funnel analysis
+- Bootstrap-based uplift estimation
+- Business-oriented storytelling
+- Reproducible analytics design
+
+---
+
+## Executive Summary
+
+A full business-facing executive summary is available in:
+
+---
+
+## Interview Pitch (30 sec)
+
+> “I built an end-to-end patient journey analytics project for eye care.  
+> I generated a realistic synthetic dataset, analyzed adoption as a funnel from recommendation to purchase, measured retention using cohorts, and quantified recommendation uplift on adoption and revenue.  
+> The result is a clear set of business actions around targeting, product tier strategy, and measurement.”
+
+---
+
+## Notes
+
+This project mirrors real-world healthcare analytics constraints:
+- privacy-first data design
+- observational uplift (non-experimental)
+- focus on decision-making, not just metrics
+
+🔙 [Back to Portfolio](https://github.com/BlladeRunner)
